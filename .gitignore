@@ -229,3 +229,5 @@ $RECYCLE.BIN/
 # Custom exclusion for large source files
 persons.json
 sessions.json
+df_callouts_total.tsv
+df_callouts_XXVII.tsv
