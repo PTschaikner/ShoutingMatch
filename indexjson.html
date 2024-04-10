@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Sankey Diagram</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <style>
+        /* Basic styling */
+        .sankey-link {
+            fill: none;
+            stroke: #000;
+            stroke-opacity: 0.2;
+        }
+        .sankey-node {
+            stroke: #000;
+            stroke-width: 1px;
+        }
+        .sankey-node rect {
+            fill-opacity: 0.9;
+        }
+        .sankey-node text {
+            fill: #000;
+            font: 10px sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <label for="sessionSelect">Select Session:</label>
+    <select id="sessionSelect">
+        <!-- Options will be populated here -->
+    </select>
+
+    <svg width="1400" height="1200"></svg>
+    <script>
+        // Load the JSON file
+        d3.json("callouts_structure.json").then(function(graph) {
+            const sessionOptions = new Set(graph.interruptions.map(d => d.session));
+            const sessionSelect = document.getElementById('sessionSelect');
+            sessionOptions.forEach(session => {
+                const option = document.createElement('option');
+                option.value = session;
+                option.innerText = `Session ${session}`;
+                sessionSelect.appendChild(option);
+            });
+
+            function updateDiagram(selectedSession) {
+    console.log("Updating for session:", selectedSession); // Debug log
+    const filteredInterruptions = graph.interruptions.filter(d => d.session === parseInt(selectedSession));
+    const involvedNodeIds = new Set(filteredInterruptions.flatMap(d => [d.caller, d.speaker]));
+
+    // Aggregate total calls per caller
+    const callerCounts = {};
+    filteredInterruptions.forEach(d => {
+        callerCounts[d.caller] = (callerCounts[d.caller] || 0) + 1; // Assuming each record is one call, adjust as necessary
+    });
+
+    // Filter nodes to include only those involved in the selected session's interruptions
+    let nodes = graph.nodes.filter(node => involvedNodeIds.has(node.id));
+
+    // Sort nodes based on the total calls per caller
+    nodes.sort((a, b) => (callerCounts[b.id] || 0) - (callerCounts[a.id] || 0));
+
+    // Since we've filtered and sorted the nodes, map the old node IDs to their new indices
+    const nodeIdToIndex = new Map(nodes.map((node, index) => [node.id, index]));
+    const links = filteredInterruptions.map(d => ({
+        source: nodeIdToIndex.get(d.caller),
+        target: nodeIdToIndex.get(d.speaker),
+        value: 1 // You could aggregate counts here if needed
+    }));
+
+    const sankey = d3.sankey()
+        .nodeWidth(15)
+        .nodePadding(10)
+        .extent([[margin.left, margin.top], [width, height]])
+        .nodeSort(null); // Disable automatic sorting
+
+    const {nodes: sankeyNodes, links: sankeyLinks} = sankey({
+        nodes: nodes.map(d => ({...d})),
+        links
+    });
+
+                d3.select("svg").selectAll("*").remove();
+
+                const svg = d3.select("svg");
+                const link = svg.append("g")
+  .selectAll(".link")
+  .data(sankeyLinks)
+  .enter().append("path")
+  .attr("class", "sankey-link")
+  .attr("d", d3.sankeyLinkHorizontal())
+  .style("stroke-width", d => Math.max(1, d.width))
+  .style("stroke", d => {
+    const callerParty = sankeyNodes[d.source.index].party; // Get caller's party using source index
+    return partyColors[callerParty]; // Set link color based on caller's party
+  });
+
+                const node = svg.append("g")
+                    .selectAll(".node")
+                    .data(sankeyNodes)
+                    .enter().append("g")
+                    .attr("class", "sankey-node");
+
+                    node.append("rect")
+    .attr("x", d => d.x0)
+    .attr("y", d => d.y0)
+    .attr("height", d => d.y1 - d.y0)
+    .attr("width", sankey.nodeWidth())
+    .style("fill", d => partyColors[d.party]) // Apply party color
+    .append("title")
+    .text(d => `${d.name}\n`);
+
+    node.append("text")
+  .attr("x", d => d.x0 < width / 2 ? d.x1 - 20 : d.x0 + 20) // Choose position based on node side
+  .attr("y", d => (d.y1 + d.y0) / 2)
+  .attr("dy", "0.35em")
+  .attr("text-anchor", d => d.x0 < width / 2 ? "end" : "start") // Choose anchor based on node side
+  .text(d => d.name);
+            }
+
+                // Set up the Sankey diagram
+    const partyColors = {
+  "FPÖ": "#000dff",
+  "ÖVP": "#000000",
+  "NEOS": "#f702c2",
+  "GRÜNE": "#31ad00",
+  "SPÖ": "#eb3434"
+};
+
+    let margin = {top: 10, right: 200, bottom: 10, left: 200},
+    width = 1200 - margin.left - margin.right,
+    height = 1200 - margin.top - margin.bottom;
+
+            updateDiagram(sessionSelect.value);
+
+            sessionSelect.addEventListener('change', (e) => updateDiagram(e.target.value));
+        });
+    </script>
+</body>
+</html>
