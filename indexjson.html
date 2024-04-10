@@ -31,12 +31,13 @@
 </head>
 
 <body>
+    <h2 id="headline">Zwischenrufe in der Parlamentssitzung</h2>
     <label for="sessionSelect">Select Session:</label>
     <select id="sessionSelect">
         <!-- Options will be populated here -->
     </select>
 
-    <svg width="1400" height="1200"></svg>
+    <svg width="1200" height="1200"></svg>
     <script>
         // Load the JSON file
         d3.json("callouts_structure.json").then(function (graph) {
@@ -50,6 +51,11 @@
             });
 
             function updateDiagram(selectedSession) {
+                let enableInteraction = false;
+
+                // Set the headline based on the selected session
+                document.getElementById('headline').textContent = `Zwischenrufe in der Parlamentssitzung ${selectedSession}`;
+
                 console.log("Updating for session:", selectedSession); // Debug log
                 const filteredInterruptions = graph.interruptions.filter(d => d.session === parseInt(selectedSession));
                 const involvedNodeIds = new Set(filteredInterruptions.flatMap(d => [d.caller, d.speaker]));
@@ -89,6 +95,22 @@
                 d3.select("svg").selectAll("*").remove();
 
                 const svg = d3.select("svg");
+
+                svg.append("text")
+                    .attr("x", margin.left) // Position it near the left column
+                    .attr("y", margin.top - 10) // Position it above the top of the SVG for visibility
+                    .text("Zwischenrufende") // The title for the left column
+                    .attr("class", "column-title"); // Assign a class for styling
+
+                svg.append("text")
+                    .attr("x", width + margin.left) // Position it near the right column, adjust as needed
+                    .attr("y", margin.top - 10) // Position it above the top of the SVG for visibility
+                    .text("Redende") // The title for the right column
+                    .attr("class", "column-title") // Assign a class for styling
+                    .attr("text-anchor", "end"); // Ensure the text is right-aligned with the end of the column
+
+
+
                 const link = svg.append("g")
                     .selectAll(".link")
                     .data(sankeyLinks)
@@ -113,7 +135,10 @@
                     .transition()
                     .duration(2000) // Duration of the animation in milliseconds
                     .ease(d3.easeCubicInOut) // Applying an easing function
-                    .attr("stroke-dashoffset", 0);
+                    .attr("stroke-dashoffset", 0)
+                    .on("end", () => {
+                        enableInteraction = true;
+                    });
 
                 const node = svg.append("g")
                     .selectAll(".node")
@@ -121,6 +146,7 @@
                     .enter().append("g")
                     .attr("class", "sankey-node")
                     .on("mouseover", function (event, d) {
+                        if (!enableInteraction) return;
                         // Only adjust stroke-opacity for highlight effect
                         svg.selectAll(".sankey-link")
                             .transition() // Apply a transition on mouseover
@@ -128,6 +154,7 @@
                             .style("stroke-opacity", link => (link.source === d || link.target === d) ? 0.7 : 0.1);
                     })
                     .on("mouseout", function () {
+                        if (!enableInteraction) return;
                         // Reset all links to default low opacity without affecting their visibility
                         svg.selectAll(".sankey-link")
                             .transition() // Resetting with transition
@@ -142,6 +169,7 @@
                     .attr("height", d => d.y1 - d.y0)
                     .attr("width", sankey.nodeWidth())
                     .style("fill", d => partyColors[d.party])
+                    .style("stroke", d => partyColors[d.party])
                     .append("title")
                     .text(d => `${d.name}\n`);
 
@@ -159,12 +187,15 @@
                 "ÖVP": "#000000",
                 "NEOS": "#f702c2",
                 "GRÜNE": "#31ad00",
-                "SPÖ": "#eb3434"
+                "SPÖ": "#eb3434",
+                "": "#d3d3d3"
             };
 
-            let margin = { top: 10, right: 200, bottom: 10, left: 200 },
-                width = 1200 - margin.left - margin.right,
+            let margin = { top: 30, right: 200, bottom: 20, left: 200 },
+                width = 1000 - margin.left - margin.right,
                 height = 1200 - margin.top - margin.bottom;
+
+
 
             updateDiagram(sessionSelect.value);
 
