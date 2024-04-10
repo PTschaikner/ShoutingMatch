@@ -2,7 +2,7 @@
     "nodes": [
         {
             "id": "cc52687",
-            "name": "Alois Stöger, diplômé",
+            "name": "Alois Stöger",
             "party": "SPÖ"
         },
         {
@@ -27,27 +27,27 @@
         },
         {
             "id": "cc83125",
-            "name": "Dr. Nikolaus Scherak, MA",
+            "name": "Nikolaus Scherak",
             "party": "NEOS"
         },
         {
             "id": "cc35468",
-            "name": "Dr. Dagmar Belakowitsch",
+            "name": "Dagmar Belakowitsch",
             "party": "FPÖ"
         },
         {
             "id": "cc14844",
-            "name": "Dr. Christoph Matznetter",
+            "name": "Christoph Matznetter",
             "party": "SPÖ"
         },
         {
             "id": "cc83151",
-            "name": "Dipl.-Kffr. (FH) Elisabeth Pfurtscheller",
+            "name": "Elisabeth Pfurtscheller",
             "party": "ÖVP"
         },
         {
             "id": "cc72959",
-            "name": "Eva-Maria Himmelbauer, BSc",
+            "name": "Eva-Maria Himmelbauer",
             "party": "ÖVP"
         },
         {
@@ -67,7 +67,7 @@
         },
         {
             "id": "cc5650",
-            "name": "Mag. Meri Disoski",
+            "name": "Meri Disoski",
             "party": "GRÜNE"
         },
         {
@@ -82,12 +82,12 @@
         },
         {
             "id": "cc2309",
-            "name": "Eva Maria Holzleitner, BSc",
+            "name": "Eva Maria Holzleitner",
             "party": "SPÖ"
         },
         {
             "id": "cc83122",
-            "name": "Mag. Beate Meinl-Reisinger, MES",
+            "name": "Beate Meinl-Reisinger",
             "party": "NEOS"
         },
         {
@@ -97,7 +97,7 @@
         },
         {
             "id": "cc83121",
-            "name": "Mag. Gerald Loacker",
+            "name": "Gerald Loacker",
             "party": "NEOS"
         },
         {
@@ -107,12 +107,12 @@
         },
         {
             "id": "cc80479",
-            "name": "Mag. Karin Greiner",
+            "name": "Karin Greiner",
             "party": "SPÖ"
         },
         {
             "id": "cc19741",
-            "name": "Mag. Julia Seidl",
+            "name": "Julia Seidl",
             "party": "NEOS"
         },
         {
@@ -122,17 +122,17 @@
         },
         {
             "id": "cc5439",
-            "name": "Dr. Christian Stocker",
+            "name": "Christian Stocker",
             "party": "ÖVP"
         },
         {
             "id": "cc55227",
-            "name": "Mag. Michael Hammer",
+            "name": "Michael Hammer",
             "party": "ÖVP"
         },
         {
             "id": "cc83148",
-            "name": "Mag. Andreas Hanger",
+            "name": "Andreas Hanger",
             "party": "ÖVP"
         },
         {
@@ -142,22 +142,22 @@
         },
         {
             "id": "cc78586",
-            "name": "Christian Hafenecker, MA",
+            "name": "Christian Hafenecker",
             "party": "FPÖ"
         },
         {
             "id": "cc22694",
-            "name": "Mag. Jörg Leichtfried",
+            "name": "Jörg Leichtfried",
             "party": "SPÖ"
         },
         {
             "id": "cc83129",
-            "name": "MMMag. Dr. Axel Kassegger",
+            "name": "Axel Kassegger",
             "party": "FPÖ"
         },
         {
             "id": "cc51879",
-            "name": "Mag. Hannes Amesbauer, BA",
+            "name": "Hannes Amesbauer",
             "party": "FPÖ"
         },
         {
@@ -172,12 +172,12 @@
         },
         {
             "id": "cc5629",
-            "name": "Mag. Corinna Scharzenberger",
+            "name": "Corinna Scharzenberger",
             "party": "ÖVP"
         },
         {
             "id": "cc2001",
-            "name": "Ing. Klaus Lindinger, BSc",
+            "name": "Klaus Lindinger",
             "party": "ÖVP"
         },
         {
@@ -187,12 +187,12 @@
         },
         {
             "id": "cc5671",
-            "name": "Ing. Martin Litschauer",
+            "name": "Martin Litschauer",
             "party": "GRÜNE"
         },
         {
             "id": "cc91141",
-            "name": "Dipl.-Ing. Karin Doppelbauer",
+            "name": "Karin Doppelbauer",
             "party": "NEOS"
         },
         {
@@ -212,12 +212,12 @@
         },
         {
             "id": "cc2329",
-            "name": "Mag. Dr. Rudolf Taschner",
+            "name": "Rudolf Taschner",
             "party": "ÖVP"
         },
         {
             "id": "cc83059",
-            "name": "Mag. Michaela Steinacker",
+            "name": "Michaela Steinacker",
             "party": "ÖVP"
         },
         {
@@ -237,12 +237,12 @@
         },
         {
             "id": "cc30653",
-            "name": "Melanie Erasim, MSc",
+            "name": "Melanie Erasim",
             "party": "SPÖ"
         },
         {
             "id": "cc5678",
-            "name": "Mag. Nina Tomaselli",
+            "name": "Nina Tomaselli",
             "party": "GRÜNE"
         },
         {
@@ -252,7 +252,7 @@
         },
         {
             "id": "cc51557",
-            "name": "Dipl.-Ing. Gerhard Deimek",
+            "name": "Gerhard Deimek",
             "party": "FPÖ"
         },
         {
@@ -262,7 +262,7 @@
         },
         {
             "id": "cc5654",
-            "name": "Dr. Elisabeth Götze",
+            "name": "Elisabeth Götze",
             "party": "GRÜNE"
         },
         {
@@ -272,22 +272,22 @@
         },
         {
             "id": "cc83299",
-            "name": "Ing. Manfred Hofinger",
+            "name": "Manfred Hofinger",
             "party": "ÖVP"
         },
         {
             "id": "cc20056",
-            "name": "Mag. (FH) Kurt Egger",
+            "name": "Kurt Egger",
             "party": "ÖVP"
         },
         {
             "id": "cc2344",
-            "name": "Dr. Stephanie Krisper",
+            "name": "Stephanie Krisper",
             "party": "NEOS"
         },
         {
             "id": "cc2834",
-            "name": "Mag. Dr. Martin Graf",
+            "name": "Martin Graf",
             "party": "FPÖ"
         },
         {
@@ -297,37 +297,37 @@
         },
         {
             "id": "cc5673",
-            "name": "Bedrana Ribo, MA",
+            "name": "Bedrana Ribo",
             "party": "GRÜNE"
         },
         {
             "id": "cc35515",
-            "name": "Mag. Gerald Hauser",
+            "name": "Gerald Hauser",
             "party": "FPÖ"
         },
         {
             "id": "cc24257",
-            "name": "Ing. Reinhold Einwallner",
+            "name": "Reinhold Einwallner",
             "party": "SPÖ"
         },
         {
             "id": "cc83153",
-            "name": "Dipl.-Ing. Georg Strasser",
+            "name": "Georg Strasser",
             "party": "ÖVP"
         },
         {
             "id": "cc67199",
-            "name": "Mag. Wolfgang Gerstl",
+            "name": "Wolfgang Gerstl",
             "party": "ÖVP"
         },
         {
             "id": "cc6502",
-            "name": "Mag. Agnes Sirkka Prammer",
+            "name": "Agnes Sirkka Prammer",
             "party": "GRÜNE"
         },
         {
             "id": "cc83101",
-            "name": "Sigrid Maurer, BA",
+            "name": "Sigrid Maurer",
             "party": "GRÜNE"
         },
         {
@@ -342,7 +342,7 @@
         },
         {
             "id": "cc5680",
-            "name": "Hermann Weratschnig, MBA MSc",
+            "name": "Hermann Weratschnig",
             "party": "GRÜNE"
         },
         {
@@ -362,12 +362,12 @@
         },
         {
             "id": "cc2242",
-            "name": "Mag. Dr. Maria Theresia Niss, MBA",
+            "name": "Maria Theresia Niss",
             "party": "ÖVP"
         },
         {
             "id": "cc1970",
-            "name": "Mag. Gerhard Kaniak",
+            "name": "Gerhard Kaniak",
             "party": "FPÖ"
         },
         {
@@ -383,7 +383,7 @@
         {
             "id": "cc51577",
             "name": "Maximilian Linder",
-            "party": "BZÖ, FPÖ, Ohne Klub"
+            "party": "FPÖ"
         },
         {
             "id": "cc1977",
@@ -392,7 +392,7 @@
         },
         {
             "id": "cc5670",
-            "name": "Mag. Markus Koza",
+            "name": "Markus Koza",
             "party": "GRÜNE"
         },
         {
@@ -402,12 +402,12 @@
         },
         {
             "id": "cc5638",
-            "name": "Mag. Christian Drobits",
+            "name": "Christian Drobits",
             "party": "SPÖ"
         },
         {
             "id": "cc72999",
-            "name": "Mag. Klaus Fürlinger",
+            "name": "Klaus Fürlinger",
             "party": "ÖVP"
         },
         {
@@ -417,22 +417,22 @@
         },
         {
             "id": "cc2331",
-            "name": "Mag. Peter Weidinger",
+            "name": "Peter Weidinger",
             "party": "ÖVP"
         },
         {
             "id": "cc5682",
-            "name": "Dr. Helmut Brandstätter",
+            "name": "Helmut Brandstätter",
             "party": "NEOS"
         },
         {
             "id": "cc3717",
-            "name": "Ing. Mag. Volker Reifenberger",
+            "name": "Volker Reifenberger",
             "party": "FPÖ"
         },
         {
             "id": "cc5679",
-            "name": "Dipl.-Ing. Olga Voglauer",
+            "name": "Olga Voglauer",
             "party": "GRÜNE"
         },
         {
@@ -442,12 +442,12 @@
         },
         {
             "id": "cc83409",
-            "name": "Mag. Ernst Gödl",
+            "name": "Ernst Gödl",
             "party": "ÖVP"
         },
         {
             "id": "cc5649",
-            "name": "Mag. Eva Blimlinger",
+            "name": "Eva Blimlinger",
             "party": "GRÜNE"
         },
         {
@@ -467,7 +467,7 @@
         },
         {
             "id": "cc5652",
-            "name": "Mag. Ulrike Fischer",
+            "name": "Ulrike Fischer",
             "party": "GRÜNE"
         },
         {
@@ -487,37 +487,37 @@
         },
         {
             "id": "cc3716",
-            "name": "MMMag. Gertraud Salzmann",
+            "name": "Gertraud Salzmann",
             "party": "ÖVP"
         },
         {
             "id": "cc51571",
-            "name": "Mag. Harald Stefan",
+            "name": "Harald Stefan",
             "party": "FPÖ"
         },
         {
             "id": "cc2339",
-            "name": "Mag. Selma Yildirim",
+            "name": "Selma Yildirim",
             "party": "SPÖ"
         },
         {
             "id": "cc1986",
-            "name": "Dr. Gudrun Kugler",
+            "name": "Gudrun Kugler",
             "party": "ÖVP"
         },
         {
             "id": "cc84054",
-            "name": "Michel Reimon, MBA",
+            "name": "Michel Reimon",
             "party": "GRÜNE"
         },
         {
             "id": "cc6501",
-            "name": "Mag. Georg Bürstmayr",
+            "name": "Georg Bürstmayr",
             "party": "GRÜNE"
         },
         {
             "id": "cc5643",
-            "name": "Mag. Dr. Petra Oberrauner",
+            "name": "Petra Oberrauner",
             "party": "SPÖ"
         },
         {
@@ -527,27 +527,27 @@
         },
         {
             "id": "cc5687",
-            "name": "Mag. Yannick Shetty",
+            "name": "Yannick Shetty",
             "party": "NEOS"
         },
         {
             "id": "cc15526",
-            "name": "Dr. Reinhold Lopatka",
+            "name": "Reinhold Lopatka",
             "party": "ÖVP"
         },
         {
             "id": "cc5685",
-            "name": "Mag. Martina Künsberg Sarre",
+            "name": "Martina Künsberg Sarre",
             "party": "NEOS"
         },
         {
             "id": "cc20281",
-            "name": "MMag. Katharina Werner, Bakk.",
+            "name": "Katharina Werner",
             "party": "NEOS"
         },
         {
             "id": "cc5668",
-            "name": "Mag. Sibylle Hamann",
+            "name": "Sibylle Hamann",
             "party": "GRÜNE"
         },
         {
@@ -557,12 +557,12 @@
         },
         {
             "id": "cc83300",
-            "name": "Mag. Friedrich Ofenauer",
+            "name": "Friedrich Ofenauer",
             "party": "ÖVP"
         },
         {
             "id": "cc5623",
-            "name": "Ing. Josef Hechenberger",
+            "name": "Josef Hechenberger",
             "party": "ÖVP"
         },
         {
@@ -572,12 +572,12 @@
         },
         {
             "id": "cc1937",
-            "name": "Mag. Christian Ragger",
+            "name": "Christian Ragger",
             "party": "FPÖ"
         },
         {
             "id": "cc83134",
-            "name": "Mag. Philipp Schrangl",
+            "name": "Philipp Schrangl",
             "party": "FPÖ"
         },
         {
@@ -592,7 +592,7 @@
         },
         {
             "id": "cc61639",
-            "name": "Hermann Brückl, MA",
+            "name": "Hermann Brückl",
             "party": "FPÖ"
         },
         {
@@ -607,12 +607,12 @@
         },
         {
             "id": "cc52688",
-            "name": "Dipl.-Ing. Nikolaus Berlakovich",
+            "name": "Nikolaus Berlakovich",
             "party": "ÖVP"
         },
         {
             "id": "cc5641",
-            "name": "Maximilian Köllner, MA",
+            "name": "Maximilian Köllner",
             "party": "SPÖ"
         },
         {
@@ -622,17 +622,17 @@
         },
         {
             "id": "cc91034",
-            "name": "Dr. Pamela Rendi-Wagner, MSc",
+            "name": "Pamela Rendi-Wagner",
             "party": "SPÖ"
         },
         {
             "id": "cc2334",
-            "name": "Mag. Verena Nussbaum",
+            "name": "Verena Nussbaum",
             "party": "SPÖ"
         },
         {
             "id": "cc14896",
-            "name": "Mag. Elisabeth Scheucher-Pichler",
+            "name": "Elisabeth Scheucher-Pichler",
             "party": "ÖVP"
         },
         {
@@ -642,12 +642,12 @@
         },
         {
             "id": "cc87146",
-            "name": "Dr. Ewa Ernst-Dziedzic",
+            "name": "Ewa Ernst-Dziedzic",
             "party": "GRÜNE"
         },
         {
             "id": "cc14835",
-            "name": "Petra Bayr, MA MLS",
+            "name": "Petra Bayr",
             "party": "SPÖ"
         },
         {
@@ -687,12 +687,12 @@
         },
         {
             "id": "cc14836",
-            "name": "Mag. Ruth Becher",
+            "name": "Ruth Becher",
             "party": "SPÖ"
         },
         {
             "id": "cc8178",
-            "name": "Mag. Andrea Kuntzl",
+            "name": "Andrea Kuntzl",
             "party": "SPÖ"
         },
         {
@@ -707,17 +707,17 @@
         },
         {
             "id": "cc5674",
-            "name": "Dr. Astrid Rössler",
+            "name": "Astrid Rössler",
             "party": "GRÜNE"
         },
         {
             "id": "cc83114",
-            "name": "Dr. Harald Troch",
+            "name": "Harald Troch",
             "party": "SPÖ"
         },
         {
             "id": "cc1981",
-            "name": "Mag. Carmen Jeitler-Cincelli, BA",
+            "name": "Carmen Jeitler-Cincelli",
             "party": "ÖVP"
         },
         {
@@ -732,7 +732,7 @@
         },
         {
             "id": "cc87002",
-            "name": "Rosa Ecker, MBA",
+            "name": "Rosa Ecker",
             "party": "FPÖ"
         },
         {
@@ -747,13 +747,13 @@
         },
         {
             "id": "cc88386",
-            "name": "Mag. Wolfgang Sobotka",
+            "name": "Wolfgang Sobotka",
             "party": "ÖVP"
         },
         {
             "id": "cc2867",
-            "name": "Dr. Reinhard Eugen Bösch",
-            "party": "BZÖ, FPÖ"
+            "name": "Reinhard Eugen Bösch",
+            "party": "FPÖ"
         },
         {
             "id": "cc5625",
@@ -762,7 +762,7 @@
         },
         {
             "id": "cc5686",
-            "name": "Dr. Johannes Margreiter",
+            "name": "Johannes Margreiter",
             "party": "NEOS"
         },
         {
@@ -772,12 +772,12 @@
         },
         {
             "id": "cc14275",
-            "name": "Mag. Bettina Rausch-Amon",
+            "name": "Bettina Rausch-Amon",
             "party": "ÖVP"
         },
         {
             "id": "cc5677",
-            "name": "Mag. Dr. Jakob Schwarz, BA",
+            "name": "Jakob Schwarz",
             "party": "GRÜNE"
         },
         {
@@ -787,7 +787,7 @@
         },
         {
             "id": "cc1567",
-            "name": "Dr. Susanne Fürst",
+            "name": "Susanne Fürst",
             "party": "FPÖ"
         },
         {
@@ -797,12 +797,12 @@
         },
         {
             "id": "cc5632",
-            "name": "MMag. Dr. Agnes Totter, BEd",
+            "name": "Agnes Totter",
             "party": "ÖVP"
         },
         {
             "id": "cc83127",
-            "name": "MMag. DDr. Hubert Fuchs",
+            "name": "Hubert Fuchs",
             "party": "FPÖ"
         },
         {
@@ -812,7 +812,7 @@
         },
         {
             "id": "cc1980",
-            "name": "Mag. Johanna Jachs",
+            "name": "Johanna Jachs",
             "party": "ÖVP"
         },
         {
@@ -822,12 +822,12 @@
         },
         {
             "id": "cc88288",
-            "name": "Mag. Felix Eypeltauer",
+            "name": "Felix Eypeltauer",
             "party": "NEOS"
         },
         {
             "id": "cc5684",
-            "name": "Fiona Fiedler, BEd",
+            "name": "Fiona Fiedler",
             "party": "NEOS"
         },
         {
@@ -842,7 +842,7 @@
         },
         {
             "id": "cc88631",
-            "name": "Mag. Dr. Sonja Hammerschmid",
+            "name": "Sonja Hammerschmid",
             "party": "SPÖ"
         },
         {
@@ -852,22 +852,22 @@
         },
         {
             "id": "cc83116",
-            "name": "Ing. Markus Vogl",
+            "name": "Markus Vogl",
             "party": "SPÖ"
         },
         {
             "id": "cc88629",
-            "name": "Mag. Thomas Drozda",
+            "name": "Thomas Drozda",
             "party": "SPÖ"
         },
         {
             "id": "cc5651",
-            "name": "Mag. Faika El-Nagashi",
+            "name": "Faika El-Nagashi",
             "party": "GRÜNE"
         },
         {
             "id": "cc6506",
-            "name": "Mag. Romana Deckenbacher",
+            "name": "Romana Deckenbacher",
             "party": "ÖVP"
         },
         {
@@ -877,7 +877,7 @@
         },
         {
             "id": "cc35521",
-            "name": "Ing. Norbert Hofer",
+            "name": "Norbert Hofer",
             "party": "FPÖ"
         },
         {
@@ -887,7 +887,7 @@
         },
         {
             "id": "cc7106",
-            "name": "Dr. Werner Saxinger, MSc",
+            "name": "Werner Saxinger",
             "party": "ÖVP"
         },
         {
@@ -897,12 +897,12 @@
         },
         {
             "id": "cc2136",
-            "name": "Karl Nehammer, MSc",
+            "name": "Karl Nehammer",
             "party": "ÖVP"
         },
         {
             "id": "cc8242",
-            "name": "Mag. Werner Kogler",
+            "name": "Werner Kogler",
             "party": "GRÜNE"
         },
         {
@@ -912,8 +912,8 @@
         },
         {
             "id": "cc2345",
-            "name": "Dr. Alma Zadić, LL.M.",
-            "party": "GRÜNE, Ohne Klub, PILZ"
+            "name": "Alma Zadić",
+            "party": "GRÜNE"
         },
         {
             "id": "ss14795",
@@ -922,32 +922,32 @@
         },
         {
             "id": "ss6486",
-            "name": "MMag. Dr. Susanne Raab",
+            "name": "Susanne Raab",
             "party": "ÖVP"
         },
         {
             "id": "ss2242",
-            "name": "Mag. Dr. Maria Theresia Niss, MBA",
+            "name": "Maria Theresia Niss",
             "party": "ÖVP"
         },
         {
             "id": "ss2309",
-            "name": "Eva Maria Holzleitner, BSc",
+            "name": "Eva Maria Holzleitner",
             "party": "SPÖ"
         },
         {
             "id": "ss87002",
-            "name": "Rosa Ecker, MBA",
+            "name": "Rosa Ecker",
             "party": "FPÖ"
         },
         {
             "id": "ss5668",
-            "name": "Mag. Sibylle Hamann",
+            "name": "Sibylle Hamann",
             "party": "GRÜNE"
         },
         {
             "id": "ss83122",
-            "name": "Mag. Beate Meinl-Reisinger, MES",
+            "name": "Beate Meinl-Reisinger",
             "party": "NEOS"
         },
         {
@@ -967,27 +967,27 @@
         },
         {
             "id": "ss5685",
-            "name": "Mag. Martina Künsberg Sarre",
+            "name": "Martina Künsberg Sarre",
             "party": "NEOS"
         },
         {
             "id": "ss88386",
-            "name": "Mag. Wolfgang Sobotka",
+            "name": "Wolfgang Sobotka",
             "party": "ÖVP"
         },
         {
             "id": "ss22694",
-            "name": "Mag. Jörg Leichtfried",
+            "name": "Jörg Leichtfried",
             "party": "SPÖ"
         },
         {
             "id": "ss2136",
-            "name": "Karl Nehammer, MSc",
+            "name": "Karl Nehammer",
             "party": "ÖVP"
         },
         {
             "id": "ss5439",
-            "name": "Dr. Christian Stocker",
+            "name": "Christian Stocker",
             "party": "ÖVP"
         },
         {
@@ -1007,37 +1007,37 @@
         },
         {
             "id": "ss5670",
-            "name": "Mag. Markus Koza",
+            "name": "Markus Koza",
             "party": "GRÜNE"
         },
         {
             "id": "ss83121",
-            "name": "Mag. Gerald Loacker",
+            "name": "Gerald Loacker",
             "party": "NEOS"
         },
         {
             "id": "ss2331",
-            "name": "Mag. Peter Weidinger",
+            "name": "Peter Weidinger",
             "party": "ÖVP"
         },
         {
             "id": "ss5493",
-            "name": "Mag. Dr. Günther Sidl",
+            "name": "Günther Sidl",
             "party": "SPÖ"
         },
         {
             "id": "ss84053",
-            "name": "Mag. Dr. Georg Mayer, MBL-HSG",
+            "name": "Georg Mayer",
             "party": "FPÖ"
         },
         {
             "id": "ss10346",
-            "name": "Dr. Monika Vana",
+            "name": "Monika Vana",
             "party": "GRÜNE"
         },
         {
             "id": "ss91141",
-            "name": "Dipl.-Ing. Karin Doppelbauer",
+            "name": "Karin Doppelbauer",
             "party": "NEOS"
         },
         {
@@ -1052,12 +1052,12 @@
         },
         {
             "id": "ss35468",
-            "name": "Dr. Dagmar Belakowitsch",
+            "name": "Dagmar Belakowitsch",
             "party": "FPÖ"
         },
         {
             "id": "ss5678",
-            "name": "Mag. Nina Tomaselli",
+            "name": "Nina Tomaselli",
             "party": "GRÜNE"
         },
         {
@@ -1082,17 +1082,17 @@
         },
         {
             "id": "ss80479",
-            "name": "Mag. Karin Greiner",
+            "name": "Karin Greiner",
             "party": "SPÖ"
         },
         {
             "id": "ss5654",
-            "name": "Dr. Elisabeth Götze",
+            "name": "Elisabeth Götze",
             "party": "GRÜNE"
         },
         {
             "id": "ss83148",
-            "name": "Mag. Andreas Hanger",
+            "name": "Andreas Hanger",
             "party": "ÖVP"
         },
         {
@@ -1107,12 +1107,12 @@
         },
         {
             "id": "ss35521",
-            "name": "Ing. Norbert Hofer",
+            "name": "Norbert Hofer",
             "party": "FPÖ"
         },
         {
             "id": "ss20056",
-            "name": "Mag. (FH) Kurt Egger",
+            "name": "Kurt Egger",
             "party": "ÖVP"
         },
         {
@@ -1122,17 +1122,17 @@
         },
         {
             "id": "ss83127",
-            "name": "MMag. DDr. Hubert Fuchs",
+            "name": "Hubert Fuchs",
             "party": "FPÖ"
         },
         {
             "id": "ss5677",
-            "name": "Mag. Dr. Jakob Schwarz, BA",
+            "name": "Jakob Schwarz",
             "party": "GRÜNE"
         },
         {
             "id": "ss1970",
-            "name": "Mag. Gerhard Kaniak",
+            "name": "Gerhard Kaniak",
             "party": "FPÖ"
         },
         {
@@ -1147,67 +1147,67 @@
         },
         {
             "id": "ss51571",
-            "name": "Mag. Harald Stefan",
+            "name": "Harald Stefan",
             "party": "FPÖ"
         },
         {
             "id": "ss2345",
-            "name": "Dr. Alma Zadić, LL.M.",
-            "party": "GRÜNE, Ohne Klub, PILZ"
+            "name": "Alma Zadić",
+            "party": "GRÜNE"
         },
         {
             "id": "ss6502",
-            "name": "Mag. Agnes Sirkka Prammer",
+            "name": "Agnes Sirkka Prammer",
             "party": "GRÜNE"
         },
         {
             "id": "ss5687",
-            "name": "Mag. Yannick Shetty",
+            "name": "Yannick Shetty",
             "party": "NEOS"
         },
         {
             "id": "ss14844",
-            "name": "Dr. Christoph Matznetter",
+            "name": "Christoph Matznetter",
             "party": "SPÖ"
         },
         {
             "id": "ss72999",
-            "name": "Mag. Klaus Fürlinger",
+            "name": "Klaus Fürlinger",
             "party": "ÖVP"
         },
         {
             "id": "ss25188",
-            "name": "MMag. Michaela Schmidt",
+            "name": "Michaela Schmidt",
             "party": "SPÖ"
         },
         {
             "id": "ss83129",
-            "name": "MMMag. Dr. Axel Kassegger",
+            "name": "Axel Kassegger",
             "party": "FPÖ"
         },
         {
             "id": "ss5682",
-            "name": "Dr. Helmut Brandstätter",
+            "name": "Helmut Brandstätter",
             "party": "NEOS"
         },
         {
             "id": "ss2001",
-            "name": "Ing. Klaus Lindinger, BSc",
+            "name": "Klaus Lindinger",
             "party": "ÖVP"
         },
         {
             "id": "ss19741",
-            "name": "Mag. Julia Seidl",
+            "name": "Julia Seidl",
             "party": "NEOS"
         },
         {
             "id": "ss2329",
-            "name": "Mag. Dr. Rudolf Taschner",
+            "name": "Rudolf Taschner",
             "party": "ÖVP"
         },
         {
             "id": "ss24257",
-            "name": "Ing. Reinhold Einwallner",
+            "name": "Reinhold Einwallner",
             "party": "SPÖ"
         },
         {
@@ -1227,7 +1227,7 @@
         },
         {
             "id": "ss5650",
-            "name": "Mag. Meri Disoski",
+            "name": "Meri Disoski",
             "party": "GRÜNE"
         },
         {
@@ -1257,7 +1257,7 @@
         },
         {
             "id": "ss1981",
-            "name": "Mag. Carmen Jeitler-Cincelli, BA",
+            "name": "Carmen Jeitler-Cincelli",
             "party": "ÖVP"
         },
         {
@@ -1267,7 +1267,7 @@
         },
         {
             "id": "ss55227",
-            "name": "Mag. Michael Hammer",
+            "name": "Michael Hammer",
             "party": "ÖVP"
         },
         {
@@ -1282,12 +1282,12 @@
         },
         {
             "id": "ss30653",
-            "name": "Melanie Erasim, MSc",
+            "name": "Melanie Erasim",
             "party": "SPÖ"
         },
         {
             "id": "ss35515",
-            "name": "Mag. Gerald Hauser",
+            "name": "Gerald Hauser",
             "party": "FPÖ"
         },
         {
@@ -1302,22 +1302,22 @@
         },
         {
             "id": "ss5010",
-            "name": "Dipl.-Ing. Andrea Holzner",
+            "name": "Andrea Holzner",
             "party": "ÖVP"
         },
         {
             "id": "ss51879",
-            "name": "Mag. Hannes Amesbauer, BA",
+            "name": "Hannes Amesbauer",
             "party": "FPÖ"
         },
         {
             "id": "ss3717",
-            "name": "Ing. Mag. Volker Reifenberger",
+            "name": "Volker Reifenberger",
             "party": "FPÖ"
         },
         {
             "id": "ss83151",
-            "name": "Dipl.-Kffr. (FH) Elisabeth Pfurtscheller",
+            "name": "Elisabeth Pfurtscheller",
             "party": "ÖVP"
         },
         {
@@ -1332,12 +1332,12 @@
         },
         {
             "id": "ss6501",
-            "name": "Mag. Georg Bürstmayr",
+            "name": "Georg Bürstmayr",
             "party": "GRÜNE"
         },
         {
             "id": "ss5686",
-            "name": "Dr. Johannes Margreiter",
+            "name": "Johannes Margreiter",
             "party": "NEOS"
         },
         {
@@ -1347,12 +1347,12 @@
         },
         {
             "id": "ss5638",
-            "name": "Mag. Christian Drobits",
+            "name": "Christian Drobits",
             "party": "SPÖ"
         },
         {
             "id": "ss2834",
-            "name": "Mag. Dr. Martin Graf",
+            "name": "Martin Graf",
             "party": "FPÖ"
         },
         {
@@ -1362,17 +1362,17 @@
         },
         {
             "id": "ss78586",
-            "name": "Christian Hafenecker, MA",
+            "name": "Christian Hafenecker",
             "party": "FPÖ"
         },
         {
             "id": "ss5652",
-            "name": "Mag. Ulrike Fischer",
+            "name": "Ulrike Fischer",
             "party": "GRÜNE"
         },
         {
             "id": "ss20281",
-            "name": "MMag. Katharina Werner, Bakk.",
+            "name": "Katharina Werner",
             "party": "NEOS"
         },
         {
@@ -1382,7 +1382,7 @@
         },
         {
             "id": "ss83101",
-            "name": "Sigrid Maurer, BA",
+            "name": "Sigrid Maurer",
             "party": "GRÜNE"
         },
         {
@@ -1392,12 +1392,12 @@
         },
         {
             "id": "ss83125",
-            "name": "Dr. Nikolaus Scherak, MA",
+            "name": "Nikolaus Scherak",
             "party": "NEOS"
         },
         {
             "id": "ss55727",
-            "name": "Dr. Magnus Brunner, LL.M.",
+            "name": "Magnus Brunner",
             "party": "ÖVP"
         },
         {
@@ -1407,7 +1407,7 @@
         },
         {
             "id": "ss2339",
-            "name": "Mag. Selma Yildirim",
+            "name": "Selma Yildirim",
             "party": "SPÖ"
         },
         {
@@ -1417,32 +1417,32 @@
         },
         {
             "id": "ss72959",
-            "name": "Eva-Maria Himmelbauer, BSc",
+            "name": "Eva-Maria Himmelbauer",
             "party": "ÖVP"
         },
         {
             "id": "ss1937",
-            "name": "Mag. Christian Ragger",
+            "name": "Christian Ragger",
             "party": "FPÖ"
         },
         {
             "id": "ss5629",
-            "name": "Mag. Corinna Scharzenberger",
+            "name": "Corinna Scharzenberger",
             "party": "ÖVP"
         },
         {
             "id": "ss83059",
-            "name": "Mag. Michaela Steinacker",
+            "name": "Michaela Steinacker",
             "party": "ÖVP"
         },
         {
             "id": "ss83114",
-            "name": "Dr. Harald Troch",
+            "name": "Harald Troch",
             "party": "SPÖ"
         },
         {
             "id": "ss14836",
-            "name": "Mag. Ruth Becher",
+            "name": "Ruth Becher",
             "party": "SPÖ"
         },
         {
@@ -1452,47 +1452,47 @@
         },
         {
             "id": "ss1986",
-            "name": "Dr. Gudrun Kugler",
+            "name": "Gudrun Kugler",
             "party": "ÖVP"
         },
         {
             "id": "ss84054",
-            "name": "Michel Reimon, MBA",
+            "name": "Michel Reimon",
             "party": "GRÜNE"
         },
         {
             "id": "ss2344",
-            "name": "Dr. Stephanie Krisper",
+            "name": "Stephanie Krisper",
             "party": "NEOS"
         },
         {
             "id": "ss5649",
-            "name": "Mag. Eva Blimlinger",
+            "name": "Eva Blimlinger",
             "party": "GRÜNE"
         },
         {
             "id": "ss52688",
-            "name": "Dipl.-Ing. Nikolaus Berlakovich",
+            "name": "Nikolaus Berlakovich",
             "party": "ÖVP"
         },
         {
             "id": "ss60446",
-            "name": "Mag. Muna Duzdar",
+            "name": "Muna Duzdar",
             "party": "SPÖ"
         },
         {
             "id": "ss5679",
-            "name": "Dipl.-Ing. Olga Voglauer",
+            "name": "Olga Voglauer",
             "party": "GRÜNE"
         },
         {
             "id": "ss61639",
-            "name": "Hermann Brückl, MA",
+            "name": "Hermann Brückl",
             "party": "FPÖ"
         },
         {
             "id": "ss20449",
-            "name": "Dr. Martin Polaschek",
+            "name": "Martin Polaschek",
             "party": ""
         },
         {
@@ -1502,27 +1502,27 @@
         },
         {
             "id": "ss7106",
-            "name": "Dr. Werner Saxinger, MSc",
+            "name": "Werner Saxinger",
             "party": "ÖVP"
         },
         {
             "id": "ss83409",
-            "name": "Mag. Ernst Gödl",
+            "name": "Ernst Gödl",
             "party": "ÖVP"
         },
         {
             "id": "ss52687",
-            "name": "Alois Stöger, diplômé",
+            "name": "Alois Stöger",
             "party": "SPÖ"
         },
         {
             "id": "ss51577",
             "name": "Maximilian Linder",
-            "party": "BZÖ, FPÖ, Ohne Klub"
+            "party": "FPÖ"
         },
         {
             "id": "ss6506",
-            "name": "Mag. Romana Deckenbacher",
+            "name": "Romana Deckenbacher",
             "party": "ÖVP"
         },
         {
@@ -1532,7 +1532,7 @@
         },
         {
             "id": "ss3716",
-            "name": "MMMag. Gertraud Salzmann",
+            "name": "Gertraud Salzmann",
             "party": "ÖVP"
         },
         {
@@ -1547,7 +1547,7 @@
         },
         {
             "id": "ss1567",
-            "name": "Dr. Susanne Fürst",
+            "name": "Susanne Fürst",
             "party": "FPÖ"
         },
         {
@@ -1557,17 +1557,17 @@
         },
         {
             "id": "ss5632",
-            "name": "MMag. Dr. Agnes Totter, BEd",
+            "name": "Agnes Totter",
             "party": "ÖVP"
         },
         {
             "id": "ss20445",
-            "name": "Mag. Gerhard Karner",
+            "name": "Gerhard Karner",
             "party": "ÖVP"
         },
         {
             "id": "ss1980",
-            "name": "Mag. Johanna Jachs",
+            "name": "Johanna Jachs",
             "party": "ÖVP"
         },
         {
@@ -1582,7 +1582,7 @@
         },
         {
             "id": "ss67199",
-            "name": "Mag. Wolfgang Gerstl",
+            "name": "Wolfgang Gerstl",
             "party": "ÖVP"
         },
         {
@@ -1612,22 +1612,22 @@
         },
         {
             "id": "ss83153",
-            "name": "Dipl.-Ing. Georg Strasser",
+            "name": "Georg Strasser",
             "party": "ÖVP"
         },
         {
             "id": "ss5623",
-            "name": "Ing. Josef Hechenberger",
+            "name": "Josef Hechenberger",
             "party": "ÖVP"
         },
         {
             "id": "ss83134",
-            "name": "Mag. Philipp Schrangl",
+            "name": "Philipp Schrangl",
             "party": "FPÖ"
         },
         {
             "id": "ss8178",
-            "name": "Mag. Andrea Kuntzl",
+            "name": "Andrea Kuntzl",
             "party": "SPÖ"
         },
         {
@@ -1637,22 +1637,22 @@
         },
         {
             "id": "ss5641",
-            "name": "Maximilian Köllner, MA",
+            "name": "Maximilian Köllner",
             "party": "SPÖ"
         },
         {
             "id": "ss2979",
-            "name": "Mag. Karoline Edtstadler",
+            "name": "Karoline Edtstadler",
             "party": "ÖVP"
         },
         {
             "id": "ss51557",
-            "name": "Dipl.-Ing. Gerhard Deimek",
+            "name": "Gerhard Deimek",
             "party": "FPÖ"
         },
         {
             "id": "ss5680",
-            "name": "Hermann Weratschnig, MBA MSc",
+            "name": "Hermann Weratschnig",
             "party": "GRÜNE"
         },
         {
@@ -1662,7 +1662,7 @@
         },
         {
             "id": "ss5653",
-            "name": "Leonore Gewessler, BA",
+            "name": "Leonore Gewessler",
             "party": "GRÜNE"
         },
         {
@@ -1672,7 +1672,7 @@
         },
         {
             "id": "ss5671",
-            "name": "Ing. Martin Litschauer",
+            "name": "Martin Litschauer",
             "party": "GRÜNE"
         },
         {
@@ -1682,7 +1682,7 @@
         },
         {
             "id": "ss1983",
-            "name": "Martina Kaufmann, MMSc BA",
+            "name": "Martina Kaufmann",
             "party": "ÖVP"
         },
         {
@@ -1692,12 +1692,12 @@
         },
         {
             "id": "ss14275",
-            "name": "Mag. Bettina Rausch-Amon",
+            "name": "Bettina Rausch-Amon",
             "party": "ÖVP"
         },
         {
             "id": "ss8242",
-            "name": "Mag. Werner Kogler",
+            "name": "Werner Kogler",
             "party": "GRÜNE"
         },
         {
@@ -1712,22 +1712,22 @@
         },
         {
             "id": "ss18140",
-            "name": "Mag. Dr. Martin Kocher",
+            "name": "Martin Kocher",
             "party": ""
         },
         {
             "id": "ss5643",
-            "name": "Mag. Dr. Petra Oberrauner",
+            "name": "Petra Oberrauner",
             "party": "SPÖ"
         },
         {
             "id": "ss15526",
-            "name": "Dr. Reinhold Lopatka",
+            "name": "Reinhold Lopatka",
             "party": "ÖVP"
         },
         {
             "id": "ss60878",
-            "name": "Dr. Angelika Winzig",
+            "name": "Angelika Winzig",
             "party": "ÖVP"
         },
         {
@@ -1737,17 +1737,17 @@
         },
         {
             "id": "ss5673",
-            "name": "Bedrana Ribo, MA",
+            "name": "Bedrana Ribo",
             "party": "GRÜNE"
         },
         {
             "id": "ss2334",
-            "name": "Mag. Verena Nussbaum",
+            "name": "Verena Nussbaum",
             "party": "SPÖ"
         },
         {
             "id": "ss5684",
-            "name": "Fiona Fiedler, BEd",
+            "name": "Fiona Fiedler",
             "party": "NEOS"
         },
         {
@@ -1757,12 +1757,12 @@
         },
         {
             "id": "ss91034",
-            "name": "Dr. Pamela Rendi-Wagner, MSc",
+            "name": "Pamela Rendi-Wagner",
             "party": "SPÖ"
         },
         {
             "id": "ss10778",
-            "name": "Mag. Norbert Totschnig, MSc",
+            "name": "Norbert Totschnig",
             "party": "ÖVP"
         },
         {
@@ -1777,12 +1777,12 @@
         },
         {
             "id": "ss3132",
-            "name": "Dr. Josef Smolle",
+            "name": "Josef Smolle",
             "party": "ÖVP"
         },
         {
             "id": "ss14896",
-            "name": "Mag. Elisabeth Scheucher-Pichler",
+            "name": "Elisabeth Scheucher-Pichler",
             "party": "ÖVP"
         },
         {
@@ -1792,7 +1792,7 @@
         },
         {
             "id": "ss6485",
-            "name": "Mag. Klaudia Tanner",
+            "name": "Klaudia Tanner",
             "party": "ÖVP"
         },
         {
@@ -1817,7 +1817,7 @@
         },
         {
             "id": "ss5430",
-            "name": "Mag. Alexander Schallenberg, LL.M.",
+            "name": "Alexander Schallenberg",
             "party": ""
         },
         {
@@ -1827,7 +1827,7 @@
         },
         {
             "id": "ss21406",
-            "name": "Mag. Susanne Kraus-Winkler",
+            "name": "Susanne Kraus-Winkler",
             "party": ""
         },
         {
@@ -1857,7 +1857,7 @@
         },
         {
             "id": "ss51560",
-            "name": "Mag. Roman Haider",
+            "name": "Roman Haider",
             "party": "FPÖ"
         },
         {
@@ -1867,7 +1867,7 @@
         },
         {
             "id": "ss22718",
-            "name": "Theresa Bielowski, BA MA",
+            "name": "Theresa Bielowski",
             "party": "SPÖ"
         },
         {
@@ -1882,22 +1882,22 @@
         },
         {
             "id": "ss5674",
-            "name": "Dr. Astrid Rössler",
+            "name": "Astrid Rössler",
             "party": "GRÜNE"
         },
         {
             "id": "ss1976",
-            "name": "Mag. Martin Engelberg",
+            "name": "Martin Engelberg",
             "party": "ÖVP"
         },
         {
             "id": "ss14835",
-            "name": "Petra Bayr, MA MLS",
+            "name": "Petra Bayr",
             "party": "SPÖ"
         },
         {
             "id": "ss86976",
-            "name": "Claudia Gamon, MSc (WU)",
+            "name": "Claudia Gamon",
             "party": "NEOS"
         },
         {
@@ -1907,12 +1907,12 @@
         },
         {
             "id": "ss3133",
-            "name": "Mag. Maria Smodics-Neumann",
+            "name": "Maria Smodics-Neumann",
             "party": "ÖVP"
         },
         {
             "id": "ss6505",
-            "name": "Ing. Mag. (FH) Alexandra Tanda",
+            "name": "Alexandra Tanda",
             "party": "ÖVP"
         },
         {
@@ -1927,27 +1927,27 @@
         },
         {
             "id": "ss2189",
-            "name": "Elisabeth Feichtinger, BEd BEd",
+            "name": "Elisabeth Feichtinger",
             "party": "SPÖ"
         },
         {
             "id": "ss7267",
-            "name": "Mag. Andrea Mayer",
+            "name": "Andrea Mayer",
             "party": ""
         },
         {
             "id": "ss83300",
-            "name": "Mag. Friedrich Ofenauer",
+            "name": "Friedrich Ofenauer",
             "party": "ÖVP"
         },
         {
             "id": "ss87146",
-            "name": "Dr. Ewa Ernst-Dziedzic",
+            "name": "Ewa Ernst-Dziedzic",
             "party": "GRÜNE"
         },
         {
             "id": "ss5633",
-            "name": "Ing. Johann Weber",
+            "name": "Johann Weber",
             "party": "ÖVP"
         },
         {
@@ -1962,17 +1962,17 @@
         },
         {
             "id": "ss21407",
-            "name": "Florian Tursky, MBA MSc",
+            "name": "Florian Tursky",
             "party": ""
         },
         {
             "id": "ss2867",
-            "name": "Dr. Reinhard Eugen Bösch",
-            "party": "BZÖ, FPÖ"
+            "name": "Reinhard Eugen Bösch",
+            "party": "FPÖ"
         },
         {
             "id": "ss83299",
-            "name": "Ing. Manfred Hofinger",
+            "name": "Manfred Hofinger",
             "party": "ÖVP"
         },
         {
@@ -1987,7 +1987,7 @@
         },
         {
             "id": "ss5490",
-            "name": "Dipl.-Ing. Alexander Bernhuber",
+            "name": "Alexander Bernhuber",
             "party": "ÖVP"
         },
         {
@@ -1997,17 +1997,17 @@
         },
         {
             "id": "ss35504",
-            "name": "Mag. Andreas Schieder",
+            "name": "Andreas Schieder",
             "party": "SPÖ"
         },
         {
             "id": "ss16347",
-            "name": "Mag. Christian Sagartz, BA",
+            "name": "Christian Sagartz",
             "party": "ÖVP"
         },
         {
             "id": "ss19043",
-            "name": "Dr. Wolfgang Mückstein",
+            "name": "Wolfgang Mückstein",
             "party": ""
         },
         {
@@ -2022,7 +2022,7 @@
         },
         {
             "id": "ss31011",
-            "name": "Mag. Gernot Blümel, MBA",
+            "name": "Gernot Blümel",
             "party": "ÖVP"
         },
         {
@@ -2037,17 +2037,17 @@
         },
         {
             "id": "ss2975",
-            "name": "Dr. Heinz Faßmann",
+            "name": "Heinz Faßmann",
             "party": ""
         },
         {
             "id": "ss88288",
-            "name": "Mag. Felix Eypeltauer",
+            "name": "Felix Eypeltauer",
             "party": "NEOS"
         },
         {
             "id": "ss20175",
-            "name": "Dr. Michael Linhart",
+            "name": "Michael Linhart",
             "party": ""
         },
         {
@@ -2057,17 +2057,17 @@
         },
         {
             "id": "ss2978",
-            "name": "Dr. Margarete Schramböck",
+            "name": "Margarete Schramböck",
             "party": "ÖVP"
         },
         {
             "id": "ss5651",
-            "name": "Mag. Faika El-Nagashi",
+            "name": "Faika El-Nagashi",
             "party": "GRÜNE"
         },
         {
             "id": "ss5491",
-            "name": "Mag. Dr. Bettina Vollath",
+            "name": "Bettina Vollath",
             "party": "SPÖ"
         },
         {
@@ -2077,7 +2077,7 @@
         },
         {
             "id": "ss51570",
-            "name": "Dr. Walter Rosenkranz",
+            "name": "Walter Rosenkranz",
             "party": "FPÖ"
         },
         {
@@ -2097,47 +2097,47 @@
         },
         {
             "id": "ss88631",
-            "name": "Mag. Dr. Sonja Hammerschmid",
+            "name": "Sonja Hammerschmid",
             "party": "SPÖ"
         },
         {
             "id": "ss2819",
-            "name": "Werner Amon, MBA",
+            "name": "Werner Amon",
             "party": "ÖVP"
         },
         {
             "id": "ss88629",
-            "name": "Mag. Thomas Drozda",
+            "name": "Thomas Drozda",
             "party": "SPÖ"
         },
         {
             "id": "ss6484",
-            "name": "Mag. (FH) Christine Aschbacher",
+            "name": "Christine Aschbacher",
             "party": "ÖVP"
         },
         {
             "id": "ss83116",
-            "name": "Ing. Markus Vogl",
+            "name": "Markus Vogl",
             "party": "SPÖ"
         },
         {
             "id": "ss8244",
-            "name": "Mag. Ulrike Lunacek",
+            "name": "Ulrike Lunacek",
             "party": "GRÜNE"
         },
         {
             "id": "ss88771",
-            "name": "Dr. Margit Kraker",
+            "name": "Margit Kraker",
             "party": ""
         },
         {
             "id": "ss5427",
-            "name": "Dipl.-Kfm. Eduard Müller, MBA",
+            "name": "Eduard Müller",
             "party": ""
         },
         {
             "id": "ss1975",
-            "name": "Mag. Dr. Juliane Bogner-Strauß",
+            "name": "Juliane Bogner-Strauß",
             "party": "ÖVP"
         },
         {
