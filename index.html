@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Sankey Diagram</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <style>
+        /* Basic styling */
+        .sankey-link {
+            fill: none;
+            stroke: #000;
+            stroke-opacity: 0.2;
+        }
+        .sankey-node {
+            stroke: #000;
+            stroke-width: 1px;
+        }
+        .sankey-node rect {
+            fill-opacity: 0.9;
+        }
+        .sankey-node text {
+            fill: #000;
+            font: 10px sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <svg width="1200" height="1200"></svg>
+    <script>
+// Load the TSV file
+d3.tsv("df_callouts_XXVII.tsv").then(function(data) {
+    // Initialize the nodes and links arrays
+    const nodes = [], links = [];
+
+    // Helper function to add a node if it doesn't exist and return its index
+    function addNode(name, id) {
+        let node = nodes.find(n => n.id === id);
+        if (!node) {
+            node = {id, name};
+            nodes.push(node);
+        }
+        return nodes.indexOf(node);
+    }
+
+    // Process the data
+    data.forEach(d => {
+    const sourceIndex = addNode(d.caller_name, d.caller_id);
+    const targetIndex = addNode(d.speaker_name, d.speaker_id);
+
+    links.push({
+        source: sourceIndex,
+        target: targetIndex,
+        value: +d.counts,
+        sourceParty: d.caller_parties, // Include party info
+        targetParty: d.speaker_parties
+    });
+});
+
+    // Set up the Sankey diagram
+    const partyColors = {
+  "FPÖ": "#000dff",
+  "ÖVP": "#000000",
+  "NEOS": "#f702c2",
+  "GRÜNE": "#31ad00",
+  "SPÖ": "#eb3434"
+};
+
+    let margin = {top: 10, right: 200, bottom: 10, left: 200},
+    width = 1200 - margin.left - margin.right,
+    height = 1200 - margin.top - margin.bottom;
+
+const sankey = d3.sankey()
+    .nodeWidth(15)
+    .nodePadding(10)
+    .extent([[margin.left, margin.top], [width, height]])
+    .nodeSort(null);
+
+    const {nodes: sankeyNodes, links: sankeyLinks} = sankey({
+        nodes: nodes.map(d => ({...d})),
+        links: links.map(d => ({...d}))
+    });
+
+    // Drawing the diagram
+const svg = d3.select("svg");
+const link = svg.append("g")
+  .selectAll(".link")
+  .data(sankeyLinks)
+  .enter().append("path")
+  .attr("class", "sankey-link")
+  .attr("d", d3.sankeyLinkHorizontal())
+  .style("stroke", d => partyColors[d.sourceParty]) // Use source party color
+  .style("stroke-width", d => Math.max(1, d.width));
+
+const node = svg.append("g")
+    .selectAll(".node")
+    .data(sankeyNodes) // Updated from sankeyGraph.nodes to sankeyNodes
+    .enter().append("g")
+    .attr("class", "sankey-node");
+
+node.append("rect")
+    .attr("x", d => d.x0)
+    .attr("y", d => d.y0)
+    .attr("height", d => d.y1 - d.y0)
+    .attr("width", sankey.nodeWidth())
+    .append("title")
+    .text(d => `${d.name}\n`);
+
+    node.append("text")
+    .attr("x", d => d.x0 < width / 2 ? d.x1 - 200 : d.x0 + 200) // Offset text from the nodes
+    .attr("y", d => (d.y1 + d.y0) / 2)
+    .attr("dy", "0.35em")
+    .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
+    .text(d => d.name);
+
+    node.on("mouseover", function(event, d) {
+    // Highlight links connected to this node by changing opacity and optionally stroke-width
+    svg.selectAll(".sankey-link")
+      .style("stroke-opacity", link => (link.source === d || link.target === d) ? 0.7 : 0.2)
+      // Only adjust the stroke-width of highlighted links, leave others as they are
+      .style("stroke-width", link => (link.source === d || link.target === d) ? Math.max(2, link.width) : link.width);
+})
+.on("mouseout", function() {
+    // Reset link styles to default
+    svg.selectAll(".sankey-link")
+      .style("stroke-opacity", 0.2)
+      .style("stroke-width", link => link.width); // Use the original width for all links
+});
+
+
+
+});
+
+    </script>
+</body>
+</html>
