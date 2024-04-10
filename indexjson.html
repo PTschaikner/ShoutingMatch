@@ -99,7 +99,21 @@
                     .style("stroke", d => {
                         const callerParty = sankeyNodes[d.source.index].party;
                         return partyColors[callerParty];
-                    });
+                    })
+                    // Setting the stroke-dasharray equal to the path length
+                    .attr("stroke-dasharray", function () {
+                        const length = this.getTotalLength();
+                        return `${length} ${length}`;
+                    })
+                    // Setting the stroke-dashoffset to the path length
+                    .attr("stroke-dashoffset", function () {
+                        return this.getTotalLength();
+                    })
+                    // Transition to animate the stroke-dashoffset to 0
+                    .transition()
+                    .duration(2000) // Duration of the animation in milliseconds
+                    .ease(d3.easeCubicInOut) // Applying an easing function
+                    .attr("stroke-dashoffset", 0);
 
                 const node = svg.append("g")
                     .selectAll(".node")
@@ -107,15 +121,20 @@
                     .enter().append("g")
                     .attr("class", "sankey-node")
                     .on("mouseover", function (event, d) {
-                        // Highlight links connected to this node
+                        // Only adjust stroke-opacity for highlight effect
                         svg.selectAll(".sankey-link")
+                            .transition() // Apply a transition on mouseover
+                            .duration(300) // Short duration for responsiveness
                             .style("stroke-opacity", link => (link.source === d || link.target === d) ? 0.7 : 0.1);
                     })
                     .on("mouseout", function () {
-                        // Reset link styles to default
+                        // Reset all links to default low opacity without affecting their visibility
                         svg.selectAll(".sankey-link")
+                            .transition() // Resetting with transition
+                            .duration(300) // Consistency in transition duration
                             .style("stroke-opacity", 0.1);
                     });
+
 
                 node.append("rect")
                     .attr("x", d => d.x0)
