@@ -37,7 +37,7 @@
         <!-- Options will be populated here -->
     </select> <br>
 
-    <svg width="1200" height="1200"></svg>
+    <svg width=100% height="1200"></svg>
     <script>
         // Load the JSON file
         d3.json("callouts_structure.json").then(function (graph) {
@@ -52,6 +52,8 @@
 
             function updateDiagram(selectedSession) {
                 let enableInteraction = false;
+
+
 
                 // Set the headline based on the selected session
                 document.getElementById('headline').textContent = `Zwischenrufe in der Parlamentssitzung ${selectedSession}`;
@@ -241,9 +243,12 @@
                 "": "#d3d3d3"
             };
 
+            const svgElement = document.querySelector('svg');
+                const svgWidth = svgElement.getBoundingClientRect().width;
+                const svgHeight = svgElement.getBoundingClientRect().height;
             let margin = { top: 30, right: 200, bottom: 20, left: 200 },
-                width = 1000 - margin.left - margin.right,
-                height = 1200 - margin.top - margin.bottom;
+                width = svgWidth - margin.left - margin.right,
+                height = svgHeight - margin.top - margin.bottom;
 
 
 
