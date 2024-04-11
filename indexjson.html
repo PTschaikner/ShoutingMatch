@@ -35,7 +35,7 @@
     <label for="sessionSelect">Select Session:</label>
     <select id="sessionSelect">
         <!-- Options will be populated here -->
-    </select>
+    </select> <br>
 
     <svg width="1200" height="1200"></svg>
     <script>
@@ -75,11 +75,21 @@
 
                 // Map the old node IDs to their new indices
                 const nodeIdToIndex = new Map(nodes.map((node, index) => [node.id, index]));
-                const links = filteredInterruptions.map(d => ({
-                    source: nodeIdToIndex.get(d.caller),
-                    target: nodeIdToIndex.get(d.speaker),
-                    value: 1
-                }));
+
+                // Initialize an object to hold aggregated interruptions
+                const linkAggregates = {};
+
+                // Aggregate interruptions by caller-speaker pairs
+                filteredInterruptions.forEach(d => {
+                    const key = `${d.caller}-${d.speaker}`;
+                    if (!linkAggregates[key]) {
+                        linkAggregates[key] = { source: nodeIdToIndex.get(d.caller), target: nodeIdToIndex.get(d.speaker), value: 0 };
+                    }
+                    linkAggregates[key].value += 1;
+                });
+
+                // Convert the aggregates into an array format expected by the Sankey generator
+                const links = Object.values(linkAggregates);
 
                 const sankey = d3.sankey()
                     .nodeWidth(15)
@@ -95,6 +105,7 @@
                 d3.select("svg").selectAll("*").remove();
 
                 const svg = d3.select("svg");
+
 
                 svg.append("text")
                     .attr("x", margin.left) // Position it near the left column
@@ -145,22 +156,61 @@
                     .data(sankeyNodes)
                     .enter().append("g")
                     .attr("class", "sankey-node")
-                    .on("mouseover", function (event, d) {
-                        if (!enableInteraction) return;
-                        // Only adjust stroke-opacity for highlight effect
-                        svg.selectAll(".sankey-link")
-                            .transition() // Apply a transition on mouseover
-                            .duration(300) // Short duration for responsiveness
-                            .style("stroke-opacity", link => (link.source === d || link.target === d) ? 0.7 : 0.1);
-                    })
+
+                node.on("mouseover", function (event, d) {
+                    if (!enableInteraction) return;
+
+                    // Adjust stroke-opacity for highlight effect and update text for all nodes
+                    svg.selectAll(".sankey-node").each(function (otherNode) {
+                        let textElement = d3.select(this).select("text.count");
+                        if (textElement.empty()) {
+                            textElement = d3.select(this).append("text")
+                                .attr("class", "count")
+                                .attr("x", otherNode.x0 < width / 2 ? otherNode.x1 + 5 : otherNode.x0 - 5)
+                                .attr("y", (otherNode.y1 + otherNode.y0) / 2)
+                                .attr("dy", "0.35em")
+                                .attr("text-anchor", otherNode.x0 < width / 2 ? "start" : "end")
+                                .style("fill", "#555") // Choose a color that makes the text visible against your node colors
+                                .style("fill", "#000") // Set text color to black
+                                .style("stroke", "#fff") // Set text stroke to white
+                                .style("stroke-width", "3px") // Set the stroke width (adjust as necessary)
+                                .style("paint-order", "stroke"); // Ensure the stroke is painted before the fill, so it doesn't obscure the fill color
+                        }
+
+                        // Show counts for interactions
+                        if (d.id === otherNode.id) {
+                            textElement.text(`${participantCounts[d.id]}`);
+                        } else {
+                            // For each link, check if it matches the current mouseover node
+                            const relatedLink = links.find(link =>
+                                (link.source.id === d.id && link.target.id === otherNode.id) ||
+                                (link.target.id === d.id && link.source.id === otherNode.id));
+                            if (relatedLink) {
+                                textElement.text(`${relatedLink.value}`);
+                            } else {
+                                textElement.text(""); // Clear the text if no direct relationship
+                            }
+                        }
+                    });
+
+                    svg.selectAll(".sankey-link")
+                        .transition()
+                        .duration(300)
+                        .style("stroke-opacity", link => (link.source === d || link.target === d) ? 0.7 : 0.1);
+                })
                     .on("mouseout", function () {
                         if (!enableInteraction) return;
+
+                        // Remove the count text on mouseout for all nodes
+                        svg.selectAll(".sankey-node").select("text.count").remove();
+
                         // Reset all links to default low opacity without affecting their visibility
                         svg.selectAll(".sankey-link")
-                            .transition() // Resetting with transition
-                            .duration(300) // Consistency in transition duration
+                            .transition()
+                            .duration(300)
                             .style("stroke-opacity", 0.1);
                     });
+
 
 
                 node.append("rect")
