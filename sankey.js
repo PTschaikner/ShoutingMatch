@@ -35,7 +35,7 @@ d3.json("callouts_structure.json").then(function (graph) {
 
     // Update the first paragraph with the total number of calls and top participants using names
     const firstParagraph = document.querySelector('p.stats');
-    firstParagraph.textContent += ` Insgesamt wurden ${Object.values(totalCalls).reduce((a, b) => a + b, 0)} Zwischenrufe erfasst. Die meisten Zwischenrufe tätigte ${maxCaller.name} mit ${maxCaller.count} Zwischenrufen, und der am häufigsten unterbrochene Sprecher war ${maxReceiver.name} mit ${maxReceiver.count} erhaltenen Zwischenrufen.`;
+    firstParagraph.textContent += ` Insgesamt wurden in der laufenden Legislaturperiode ${Object.values(totalCalls).reduce((a, b) => a + b, 0)} Zwischenrufe erfasst. Die meisten Zwischenrufe im Datensatz stammen von ${maxCaller.name} (${maxCaller.count}), der am häufigsten unterbrochene Sprecher war ${maxReceiver.name} mit ${maxReceiver.count} erhaltenen Zwischenrufen.`;
 
     const sessionOptions = new Set(graph.interruptions.map(d => d.session));
     const sessionSelect = document.getElementById('sessionSelect');
