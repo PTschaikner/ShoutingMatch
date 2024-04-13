@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
+
 <head>
     <title>Sankey Diagram</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -10,127 +11,283 @@
         .sankey-link {
             fill: none;
             stroke: #000;
-            stroke-opacity: 0.2;
+            stroke-opacity: 0.1;
         }
+
         .sankey-node {
             stroke: #000;
             stroke-width: 1px;
         }
+
         .sankey-node rect {
             fill-opacity: 0.9;
         }
+
         .sankey-node text {
             fill: #000;
             font: 10px sans-serif;
         }
+
+        .column-title {
+            font-size: 12px;
+            /* Set the size of the font */
+            font-family: sans-serif;
+            /* Specify sans-serif as the font family */
+            font-weight: bold;
+            /* Make the font bold */
+        }
+
+        svg {
+            width: 100%;
+            /* Full width of its container */
+            height: 95vh;
+            /* Takes 95% of the viewport height */
+            min-height: 1200px;
+            /* Minimum height */
+        }
+
+        @media (min-width: 768px) {
+            svg {
+                width: 900px;
+                /* Specify your desired width here */
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            /* Apply sans-serif font globally */
+        }
     </style>
 </head>
+
 <body>
-    <svg width="1000" height="1200"></svg>
+    <h2 id="headline">Zwischenrufe in der Parlamentssitzung</h2>
+    <label for="sessionSelect">Select Session:</label>
+    <select id="sessionSelect">
+        <!-- Options will be populated here -->
+    </select> <br>
+
+    <svg></svg>
     <script>
-// Load the TSV file
-d3.tsv("df_callouts_XXVII.tsv").then(function(data) {
-    // Initialize the nodes and links arrays
-    const nodes = [], links = [];
+        // Load the JSON file
+        d3.json("callouts_structure.json").then(function (graph) {
+            const sessionOptions = new Set(graph.interruptions.map(d => d.session));
+            const sessionSelect = document.getElementById('sessionSelect');
+            sessionOptions.forEach(session => {
+                const option = document.createElement('option');
+                option.value = session;
+                option.innerText = `${session}`;
+                sessionSelect.appendChild(option);
+            });
 
-    // Helper function to add a node if it doesn't exist and return its index
-    function addNode(name, id) {
-        let node = nodes.find(n => n.id === id);
-        if (!node) {
-            node = {id, name};
-            nodes.push(node);
-        }
-        return nodes.indexOf(node);
-    }
-
-    // Process the data
-    data.forEach(d => {
-    const sourceIndex = addNode(d.caller_name, d.caller_id);
-    const targetIndex = addNode(d.speaker_name, d.speaker_id);
-
-    links.push({
-        source: sourceIndex,
-        target: targetIndex,
-        value: +d.counts,
-        sourceParty: d.caller_parties, // Include party info
-        targetParty: d.speaker_parties
-    });
-});
-
-    // Set up the Sankey diagram
-    const partyColors = {
-  "FPÖ": "#000dff",
-  "ÖVP": "#000000",
-  "NEOS": "#f702c2",
-  "GRÜNE": "#31ad00",
-  "SPÖ": "#eb3434"
-};
-
-    let margin = {top: 10, right: 200, bottom: 10, left: 200},
-    width = 1200 - margin.left - margin.right,
-    height = 1200 - margin.top - margin.bottom;
-
-const sankey = d3.sankey()
-    .nodeWidth(15)
-    .nodePadding(10)
-    .extent([[margin.left, margin.top], [width, height]])
-    .nodeSort(null);
-
-    const {nodes: sankeyNodes, links: sankeyLinks} = sankey({
-        nodes: nodes.map(d => ({...d})),
-        links: links.map(d => ({...d}))
-    });
-
-    // Drawing the diagram
-const svg = d3.select("svg");
-const link = svg.append("g")
-  .selectAll(".link")
-  .data(sankeyLinks)
-  .enter().append("path")
-  .attr("class", "sankey-link")
-  .attr("d", d3.sankeyLinkHorizontal())
-  .style("stroke", d => partyColors[d.sourceParty]) // Use source party color
-  .style("stroke-width", d => Math.max(1, d.width));
-
-const node = svg.append("g")
-    .selectAll(".node")
-    .data(sankeyNodes) // Updated from sankeyGraph.nodes to sankeyNodes
-    .enter().append("g")
-    .attr("class", "sankey-node");
-
-node.append("rect")
-    .attr("x", d => d.x0)
-    .attr("y", d => d.y0)
-    .attr("height", d => d.y1 - d.y0)
-    .attr("width", sankey.nodeWidth())
-    .append("title")
-    .text(d => `${d.name}\n`);
-
-    node.append("text")
-    .attr("x", d => d.x0 < width / 2 ? d.x1 - 200 : d.x0 + 200) // Offset text from the nodes
-    .attr("y", d => (d.y1 + d.y0) / 2)
-    .attr("dy", "0.35em")
-    .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
-    .text(d => d.name);
-
-    node.on("mouseover", function(event, d) {
-    // Highlight links connected to this node by changing opacity and optionally stroke-width
-    svg.selectAll(".sankey-link")
-      .style("stroke-opacity", link => (link.source === d || link.target === d) ? 0.7 : 0.2)
-      // Only adjust the stroke-width of highlighted links, leave others as they are
-      .style("stroke-width", link => (link.source === d || link.target === d) ? Math.max(2, link.width) : link.width);
-})
-.on("mouseout", function() {
-    // Reset link styles to default
-    svg.selectAll(".sankey-link")
-      .style("stroke-opacity", 0.2)
-      .style("stroke-width", link => link.width); // Use the original width for all links
-});
+            function updateDiagram(selectedSession) {
+                let enableInteraction = false;
 
 
 
-});
+                // Set the headline based on the selected session
+                document.getElementById('headline').textContent = `Zwischenrufe in der Parlamentssitzung ${selectedSession}`;
 
+                console.log("Updating for session:", selectedSession); // Debug log
+                const filteredInterruptions = graph.interruptions.filter(d => d.session === parseInt(selectedSession));
+                const involvedNodeIds = new Set(filteredInterruptions.flatMap(d => [d.caller, d.speaker]));
+
+                // Aggregate total calls per caller and speaker
+                const participantCounts = {}; // Use a single object for both caller and speaker
+                filteredInterruptions.forEach(d => {
+                    participantCounts[d.caller] = (participantCounts[d.caller] || 0) + 1;
+                    participantCounts[d.speaker] = (participantCounts[d.speaker] || 0) + 1;
+                });
+
+                // Filter nodes to include only those involved in the selected session's interruptions
+                let nodes = graph.nodes.filter(node => involvedNodeIds.has(node.id));
+
+                // Sort nodes based on the total involvement (calls and interruptions)
+                nodes.sort((a, b) => (participantCounts[b.id] || 0) - (participantCounts[a.id] || 0));
+
+                // Map the old node IDs to their new indices
+                const nodeIdToIndex = new Map(nodes.map((node, index) => [node.id, index]));
+
+                // Initialize an object to hold aggregated interruptions
+                const linkAggregates = {};
+
+                // Aggregate interruptions by caller-speaker pairs
+                filteredInterruptions.forEach(d => {
+                    const key = `${d.caller}-${d.speaker}`;
+                    if (!linkAggregates[key]) {
+                        linkAggregates[key] = { source: nodeIdToIndex.get(d.caller), target: nodeIdToIndex.get(d.speaker), value: 0 };
+                    }
+                    linkAggregates[key].value += 1;
+                });
+
+                // Convert the aggregates into an array format expected by the Sankey generator
+                const links = Object.values(linkAggregates);
+
+                const sankey = d3.sankey()
+                    .nodeWidth(15)
+                    .nodePadding(10)
+                    .extent([[margin.left, margin.top], [width, height]])
+                    .nodeSort(null);
+
+                const { nodes: sankeyNodes, links: sankeyLinks } = sankey({
+                    nodes: nodes.map(d => ({ ...d })),
+                    links
+                });
+
+                d3.select("svg").selectAll("*").remove();
+
+                const svg = d3.select("svg");
+
+
+                svg.append("text")
+                    .attr("x", margin.left) // Position it near the left column
+                    .attr("y", margin.top - 10) // Position it above the top of the SVG for visibility
+                    .text("Zwischenrufe") // The title for the left column
+                    .attr("class", "column-title"); // Assign a class for styling
+
+                svg.append("text")
+                    .attr("x", width) // Position it near the right column, adjust as needed
+                    .attr("y", margin.top - 10) // Position it above the top of the SVG for visibility
+                    .text("Unterbrechungen") // The title for the right column
+                    .attr("class", "column-title") // Assign a class for styling
+                    .attr("text-anchor", "end"); // Ensure the text is right-aligned with the end of the column
+
+
+
+                const link = svg.append("g")
+                    .selectAll(".link")
+                    .data(sankeyLinks)
+                    .enter().append("path")
+                    .attr("class", "sankey-link")
+                    .attr("d", d3.sankeyLinkHorizontal())
+                    .style("stroke-width", d => Math.max(1, d.width))
+                    .style("stroke", d => {
+                        const callerParty = sankeyNodes[d.source.index].party;
+                        return partyColors[callerParty];
+                    })
+                    // Setting the stroke-dasharray equal to the path length
+                    .attr("stroke-dasharray", function () {
+                        const length = this.getTotalLength();
+                        return `${length} ${length}`;
+                    })
+                    // Setting the stroke-dashoffset to the path length
+                    .attr("stroke-dashoffset", function () {
+                        return this.getTotalLength();
+                    })
+                    // Transition to animate the stroke-dashoffset to 0
+                    .transition()
+                    .duration(2000) // Duration of the animation in milliseconds
+                    .ease(d3.easeCubicInOut) // Applying an easing function
+                    .attr("stroke-dashoffset", 0)
+                    .on("end", () => {
+                        enableInteraction = true;
+                    });
+
+                const node = svg.append("g")
+                    .selectAll(".node")
+                    .data(sankeyNodes)
+                    .enter().append("g")
+                    .attr("class", "sankey-node")
+
+                node.on("mouseover", function (event, d) {
+                    if (!enableInteraction) return;
+
+                    // Adjust stroke-opacity for highlight effect and update text for all nodes
+                    svg.selectAll(".sankey-node").each(function (otherNode) {
+                        let textElement = d3.select(this).select("text.count");
+                        if (textElement.empty()) {
+                            textElement = d3.select(this).append("text")
+                                .attr("class", "count")
+                                .attr("x", otherNode.x0 < width / 2 ? otherNode.x1 + 5 : otherNode.x0 - 5)
+                                .attr("y", (otherNode.y1 + otherNode.y0) / 2)
+                                .attr("dy", "0.35em")
+                                .attr("text-anchor", otherNode.x0 < width / 2 ? "start" : "end")
+                                .style("fill", "#555") // Choose a color that makes the text visible against your node colors
+                                .style("fill", "#000") // Set text color to black
+                                .style("stroke", "#fff") // Set text stroke to white
+                                .style("stroke-width", "3px") // Set the stroke width (adjust as necessary)
+                                .style("paint-order", "stroke"); // Ensure the stroke is painted before the fill, so it doesn't obscure the fill color
+                        }
+
+                        // Show counts for interactions
+                        if (d.id === otherNode.id) {
+                            textElement.text(`${participantCounts[d.id]}`);
+                        } else {
+                            // For each link, check if it matches the current mouseover node
+                            const relatedLink = links.find(link =>
+                                (link.source.id === d.id && link.target.id === otherNode.id) ||
+                                (link.target.id === d.id && link.source.id === otherNode.id));
+                            if (relatedLink) {
+                                textElement.text(`${relatedLink.value}`);
+                            } else {
+                                textElement.text(""); // Clear the text if no direct relationship
+                            }
+                        }
+                    });
+
+                    svg.selectAll(".sankey-link")
+                        .transition()
+                        .duration(300)
+                        .style("stroke-opacity", link => (link.source === d || link.target === d) ? 0.7 : 0.1);
+                })
+                    .on("mouseout", function () {
+                        if (!enableInteraction) return;
+
+                        // Remove the count text on mouseout for all nodes
+                        svg.selectAll(".sankey-node").select("text.count").remove();
+
+                        // Reset all links to default low opacity without affecting their visibility
+                        svg.selectAll(".sankey-link")
+                            .transition()
+                            .duration(300)
+                            .style("stroke-opacity", 0.1);
+                    });
+
+
+
+                node.append("rect")
+                    .attr("x", d => d.x0)
+                    .attr("y", d => d.y0)
+                    .attr("height", d => d.y1 - d.y0)
+                    .attr("width", sankey.nodeWidth())
+                    .style("fill", d => partyColors[d.party])
+                    .style("stroke", d => partyColors[d.party])
+                    .append("title")
+                    .text(d => `${d.name}\n`);
+
+                node.append("text")
+                    .attr("x", d => d.x0 < width / 2 ? d.x1 - 25 : d.x0 + 25)
+                    .attr("y", d => (d.y1 + d.y0) / 2)
+                    .attr("dy", "0.35em")
+                    .attr("text-anchor", d => d.x0 < width / 2 ? "end" : "start")
+                    .text(d => d.name);
+            }
+
+            // Set up the Sankey diagram
+            const partyColors = {
+                "FPÖ": "#000dff",
+                "ÖVP": "#000000",
+                "NEOS": "#f702c2",
+                "GRÜNE": "#31ad00",
+                "SPÖ": "#eb3434",
+                "": "#d3d3d3"
+            };
+
+            const svgElement = document.querySelector('svg');
+            const svgWidth = svgElement.getBoundingClientRect().width;
+            const svgHeight = svgElement.getBoundingClientRect().height;
+            let margin = { top: 30, right: 0, bottom: 20, left: 170 },
+                width = svgWidth - margin.left - margin.right,
+                height = svgHeight - margin.top - margin.bottom;
+
+
+
+            updateDiagram(sessionSelect.value);
+
+            sessionSelect.addEventListener('change', (e) => updateDiagram(e.target.value));
+        });
     </script>
+
 </body>
+
 </html>
