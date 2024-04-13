@@ -1,0 +1,66 @@
+        /* Basic styling */
+        .sankey-link {
+            fill: none;
+            stroke: #000;
+            stroke-opacity: 0.1;
+        }
+
+        .sankey-node {
+            stroke: #000;
+            stroke-width: 1px;
+        }
+
+        .sankey-node rect {
+            fill-opacity: 0.9;
+        }
+
+        .sankey-node text {
+            fill: #000;
+            font: 10px sans-serif;
+        }
+
+        .column-title {
+            font-size: 12px;
+            /* Set the size of the font */
+            font-family: sans-serif;
+            /* Specify sans-serif as the font family */
+            font-weight: bold;
+            /* Make the font bold */
+        }
+
+        svg {
+            display: block; /* Ensures the SVG is treated as a block-level element */
+        margin-left: auto; /* Left margin set to auto to center horizontally */
+        margin-right: auto; /* Right margin set to auto to center horizontally */
+
+            /* Full width of its container */
+            height: auto;
+            /* Takes 95% of the viewport height */
+            min-height: 1200px;
+            /* Minimum height */
+        }
+
+        @media (min-width: 768px) {
+            svg {
+                width: 800px;
+                /* Specify your desired width here */
+            }
+            
+        }
+
+        body {
+        font-family: 'Arial', sans-serif;
+        max-width: 800px; /* Maximum width on larger screens */
+        margin: auto; /* Center the content horizontally */
+    }
+
+        .small-text {
+            font-size: 0.8em;
+            /* Smaller text size */
+        }
+
+        .bold {
+            font-weight: bold;
+            /* Make text bold */
+        }
+        
