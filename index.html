@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Sankey Diagram</title>
+    <title>Schreiduell</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
     <style>
@@ -38,9 +38,12 @@
         }
 
         svg {
-            width: 100%;
+            display: block; /* Ensures the SVG is treated as a block-level element */
+        margin-left: auto; /* Left margin set to auto to center horizontally */
+        margin-right: auto; /* Right margin set to auto to center horizontally */
+
             /* Full width of its container */
-            height: 95vh;
+            height: auto;
             /* Takes 95% of the viewport height */
             min-height: 1200px;
             /* Minimum height */
@@ -48,30 +51,96 @@
 
         @media (min-width: 768px) {
             svg {
-                width: 900px;
+                width: 800px;
                 /* Specify your desired width here */
             }
+            
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            /* Apply sans-serif font globally */
+        font-family: 'Arial', sans-serif;
+        max-width: 800px; /* Maximum width on larger screens */
+        margin: auto; /* Center the content horizontally */
+    }
+
+        .small-text {
+            font-size: 0.8em;
+            /* Smaller text size */
         }
+
+        .bold {
+            font-weight: bold;
+            /* Make text bold */
+        }
+        
     </style>
 </head>
 
 <body>
-    <h2 id="headline">Zwischenrufe in der Parlamentssitzung</h2>
-    <label for="sessionSelect">Select Session:</label>
+    <h2 id="headline">Zwischenrufe der Nationalratsstizung </h2>
+<p>Das folgende interaktive Diagramm bietet eine umfassende Visualisierung aller protokollierten Zwischenrufe während der Nationalratssitzungen der 27. Gesetzgebungsperiode des österreichischen Parlaments. 
+Dieses Tool ermöglicht es, die Dynamik und die Häufigkeit der Zwischenrufe klar zu erkennen und zu verstehen.</p>
+<p class="stats"></p>
+
+    <label for="sessionSelect">Nationalratssitzung auswählen:</label>
+
+
     <select id="sessionSelect">
         <!-- Options will be populated here -->
     </select> <br>
 
     <svg></svg>
     <script>
-        // Load the JSON file
-        d3.json("callouts_structure.json").then(function (graph) {
-            const sessionOptions = new Set(graph.interruptions.map(d => d.session));
+            // Load the JSON file
+    d3.json("callouts_structure.json").then(function (graph) {
+       d3.json("callouts_structure.json").then(function (graph) {
+    const totalCalls = {};
+    const receivedCalls = {};
+    const nodeNames = {};
+
+    // Create a mapping of node IDs to their names
+    graph.nodes.forEach(node => {
+        nodeNames[node.id] = node.name;
+    });
+
+    // Process each interruption to count calls made and received and refer to the names
+    graph.interruptions.forEach(d => {
+        if (totalCalls[d.caller]) {
+            totalCalls[d.caller]++;
+        } else {
+            totalCalls[d.caller] = 1;
+        }
+        if (d.speaker) {
+            if (receivedCalls[d.speaker]) {
+                receivedCalls[d.speaker]++;
+            } else {
+                receivedCalls[d.speaker] = 1;
+            }
+        }
+    });
+
+    // Determine who made the most and who received the most calls using names
+    let maxCaller = { name: null, count: 0 };
+    let maxReceiver = { name: null, count: 0 };
+
+    for (const [id, count] of Object.entries(totalCalls)) {
+        if (count > maxCaller.count) {
+            maxCaller = { name: nodeNames[id], count: count };
+        }
+    }
+
+    for (const [id, count] of Object.entries(receivedCalls)) {
+        if (count > maxReceiver.count) {
+            maxReceiver = { name: nodeNames[id], count: count };
+        }
+    }
+
+    // Update the first paragraph with the total number of calls and top participants using names
+    const firstParagraph = document.querySelector('p.stats');
+    firstParagraph.textContent += ` Insgesamt wurden ${Object.values(totalCalls).reduce((a, b) => a + b, 0)} Zwischenrufe erfasst. Die meisten Zwischenrufe tätigte ${maxCaller.name} mit ${maxCaller.count} Zwischenrufen, und der am häufigsten unterbrochene Sprecher war ${maxReceiver.name} mit ${maxReceiver.count} erhaltenen Zwischenrufen.`;
+});
+        
+        const sessionOptions = new Set(graph.interruptions.map(d => d.session));
             const sessionSelect = document.getElementById('sessionSelect');
             sessionOptions.forEach(session => {
                 const option = document.createElement('option');
@@ -83,14 +152,20 @@
             function updateDiagram(selectedSession) {
                 let enableInteraction = false;
 
-
-
-                // Set the headline based on the selected session
-                document.getElementById('headline').textContent = `Zwischenrufe in der Parlamentssitzung ${selectedSession}`;
+                // Find the data for the selected session
+                const sessionData = graph.interruptions.find(d => d.session === parseInt(selectedSession));
+                const dateStr = sessionData.date;
+                const dateObj = new Date(dateStr);
+                // Locale-specific formatting
+                const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                const formattedDate = dateObj.toLocaleDateString('de-DE', options);
+                // Set the headline based on the selected session and append the formatted date
+                document.getElementById('headline').textContent = `Protokollierte Zwischenrufe der ${selectedSession}. Nationalratssitzung am ${formattedDate}`;
 
                 console.log("Updating for session:", selectedSession); // Debug log
                 const filteredInterruptions = graph.interruptions.filter(d => d.session === parseInt(selectedSession));
                 const involvedNodeIds = new Set(filteredInterruptions.flatMap(d => [d.caller, d.speaker]));
+
 
                 // Aggregate total calls per caller and speaker
                 const participantCounts = {}; // Use a single object for both caller and speaker
@@ -142,13 +217,13 @@
                 svg.append("text")
                     .attr("x", margin.left) // Position it near the left column
                     .attr("y", margin.top - 10) // Position it above the top of the SVG for visibility
-                    .text("Zwischenrufe") // The title for the left column
+                    .text("Getätigte Zwischenrufe") // The title for the left column
                     .attr("class", "column-title"); // Assign a class for styling
 
                 svg.append("text")
                     .attr("x", width) // Position it near the right column, adjust as needed
                     .attr("y", margin.top - 10) // Position it above the top of the SVG for visibility
-                    .text("Unterbrechungen") // The title for the right column
+                    .text("Erhaltene Zwischenrufe") // The title for the right column
                     .attr("class", "column-title") // Assign a class for styling
                     .attr("text-anchor", "end"); // Ensure the text is right-aligned with the end of the column
 
@@ -267,9 +342,9 @@
             const partyColors = {
                 "FPÖ": "#000dff",
                 "ÖVP": "#000000",
-                "NEOS": "#f702c2",
+                "NEOS": "#fe019a",
                 "GRÜNE": "#31ad00",
-                "SPÖ": "#eb3434",
+                "SPÖ": "#d41a0d",
                 "": "#d3d3d3"
             };
 
@@ -287,6 +362,21 @@
             sessionSelect.addEventListener('change', (e) => updateDiagram(e.target.value));
         });
     </script>
+    <div>
+        <p class="small-text">
+            <strong>Visualisierung:</strong> <a href="https://twitter.com/P_Tschaikner" target="_blank"
+                rel="noopener noreferrer">@P_Tschaikner</a><br>
+            <strong>Datenquelle:</strong> <a href="https://woswormeileistung.marioslab.io" target="_blank"
+                rel="noopener noreferrer">"Wos wor mei Leistung?"</a> von <a href="https://twitter.com/badlogicgames"
+                target="_blank" rel="noopener noreferrer">Mario Zechner</a>, basierend auf den stenographischen
+            Protokollen aller Sitzungen des Österreichischen Parlaments ab dem 20.12.2002.<br>
+            <strong>Lizenz:</strong> Creative Commons Attribution 4.0 International (CC BY 4.0).
+        </p>
+        <p class="small-text">
+            Wenn euch dieser Inhalt gefallen hat, erwägt eine Spende an <a href="https://cards-for-ukraine.at/"
+                target="_blank" rel="noopener noreferrer">Cards for Ukraine</a>.
+        </p>
+    </div>
 
 </body>
 
